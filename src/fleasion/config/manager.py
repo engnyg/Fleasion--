@@ -255,9 +255,10 @@ DEFAULT_SETTINGS = {
     'enabled_configs': [],
     'last_config': 'Default',
     'theme': 'System',  # System, Light, Dark
-    'language': 'en',
+    'language': 'zh',
     'audio_volume': 70,  # 0-100
     'always_on_top': False,
+    'glass_ui': True,
     'open_dashboard_on_launch': True,
     'first_time_setup_complete': False,
     'auto_delete_cache_on_exit': True,
@@ -794,7 +795,7 @@ class ConfigManager:
         """Return a supported language code, falling back to English."""
         from ..localization import normalize_language
 
-        return normalize_language(self.settings.get('language', 'en'))
+        return normalize_language(self.settings.get('language', 'zh'))
 
     @language.setter
     def language(self, value: str):
@@ -824,6 +825,17 @@ class ConfigManager:
     def always_on_top(self, value: bool):
         """Set always on top setting."""
         self.settings['always_on_top'] = value
+        self._save_settings()
+
+    @property
+    def glass_ui(self) -> bool:
+        """Get whether the Windows 11 liquid-glass look is used."""
+        return bool(self.settings.get('glass_ui', True))
+
+    @glass_ui.setter
+    def glass_ui(self, value: bool):
+        """Set whether the Windows 11 liquid-glass look is used."""
+        self.settings['glass_ui'] = value
         self._save_settings()
 
     @property

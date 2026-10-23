@@ -738,6 +738,8 @@ TURKISH: dict[str, str] = {
     'settings.language.label': 'Dil',
     'settings.language.restart_required_body': 'Yeni dili uygulamak için Fleasion’ı yeniden başlatın. Geçerli oturum mevcut dilde kalacaktır.',
     'settings.language.restart_required_title': 'Yeniden Başlatma Gerekli',
+    'settings.glass.checkbox': 'Sıvı cam pencere efekti (Windows 11)',
+    'settings.glass.restart_required_body': "Cam pencere efekti değişikliğini uygulamak için Fleasion'ı yeniden başlatın.",
     'settings.language.section': 'Dil',
     'settings.linux_client.none_detected': 'hiçbiri algılanmadı',
     'settings.linux_client.section': 'Linux Roblox İstemcisi',

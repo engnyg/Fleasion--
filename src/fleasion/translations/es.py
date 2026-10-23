@@ -738,6 +738,8 @@ SPANISH: dict[str, str] = {
     'settings.language.label': 'Idioma',
     'settings.language.restart_required_body': 'Reinicie Fleasion para aplicar el nuevo idioma. La sesión actual permanecerá en el idioma actual.',
     'settings.language.restart_required_title': 'Se requiere reinicio',
+    'settings.glass.checkbox': 'Efecto de ventana de cristal líquido (Windows 11)',
+    'settings.glass.restart_required_body': 'Reinicia Fleasion para aplicar el cambio del efecto de cristal.',
     'settings.language.section': 'Idioma',
     'settings.linux_client.none_detected': 'ninguno detectado',
     'settings.linux_client.section': 'Cliente Roblox Linux',
