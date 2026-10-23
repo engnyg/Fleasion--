@@ -738,6 +738,8 @@ RUSSIAN: dict[str, str] = {
     'settings.language.label': 'Язык',
     'settings.language.restart_required_body': 'Перезапустите Fleasion, чтобы применить новый язык. Текущий сеанс останется на прежнем языке.',
     'settings.language.restart_required_title': 'Требуется перезапуск',
+    'settings.glass.checkbox': 'Эффект «жидкого стекла» для окон (Windows 11)',
+    'settings.glass.restart_required_body': 'Перезапустите Fleasion, чтобы применить изменение эффекта стекла.',
     'settings.language.section': 'Язык',
     'settings.linux_client.none_detected': 'не обнаружено',
     'settings.linux_client.section': 'Клиент Roblox для Linux',

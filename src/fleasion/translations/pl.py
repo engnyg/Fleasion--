@@ -738,6 +738,8 @@ POLISH: dict[str, str] = {
     'settings.language.label': 'Język',
     'settings.language.restart_required_body': 'Uruchom ponownie Fleasion, aby zastosować nowy język. Bieżąca sesja pozostanie w istniejącym języku.',
     'settings.language.restart_required_title': 'Wymagane ponowne uruchomienie',
+    'settings.glass.checkbox': 'Efekt okna ze szkła w płynie (Windows 11)',
+    'settings.glass.restart_required_body': 'Uruchom ponownie Fleasion, aby zastosować zmianę efektu szkła.',
     'settings.language.section': 'Język',
     'settings.linux_client.none_detected': 'nie wykryto żadnego',
     'settings.linux_client.section': 'Klient Roblox dla Linux',

@@ -8,6 +8,8 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QColor, QPalette
 from PyQt6.QtWidgets import QApplication
 
+from . import glass
+
 
 @dataclass(frozen=True)
 class PanelThemeColors:
@@ -44,7 +46,24 @@ class ThemeManager:
         else:
             ThemeManager._apply_forced_theme(app, theme)
 
+        ThemeManager._apply_glass(app)
         ThemeManager._refresh_widgets(app)
+        if glass.is_active():
+            # Re-polishing resets per-window palettes, so restyle afterwards.
+            glass.refresh_windows(app)
+
+    @staticmethod
+    def set_glass_enabled(enabled: bool) -> None:
+        """Choose whether the Windows 11 liquid-glass look is used this session."""
+        glass.set_enabled(enabled)
+
+    @staticmethod
+    def _apply_glass(app: QApplication) -> None:
+        if not glass.is_active():
+            glass.remove(app)
+            return
+
+        glass.install(app, dark=ThemeManager._effective_theme == 'Dark')
 
     @staticmethod
     def _remember_system_theme(app: QApplication) -> None:
@@ -289,6 +308,13 @@ class ThemeManager:
             )
 
         is_dark = panel_theme == 'Dark'
+        if glass.is_active():
+            return PanelThemeColors(
+                section_background=QColor(255, 255, 255, 14 if is_dark else 90),
+                section_border=QColor(255, 255, 255, 34 if is_dark else 160),
+                container_background_css='background-color: transparent;',
+            )
+
         return PanelThemeColors(
             section_background=QColor('#272727') if is_dark else QColor('#f0f0f0'),
             section_border=QColor('#3a3a3a') if is_dark else QColor('#d0d0d0'),
