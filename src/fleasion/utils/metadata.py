@@ -31,6 +31,7 @@ def _project_url(label: str) -> str:
 
 
 APP_NAME = 'Fleasion'
+APP_DISPLAY_NAME = '跳蛋'
 APP_AUTHOR = '@8ar__, @dis_spencer, @1_v'
 APP_LOGIC = '@blockce, @0100152000022000, @yeha., @emk530'
 APP_CONCEPT = '@cro.p'

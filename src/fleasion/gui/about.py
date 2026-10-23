@@ -8,6 +8,7 @@ from PyQt6.QtWidgets import QDialog, QFrame, QLabel, QPushButton, QVBoxLayout
 from ..utils import (
     APP_AUTHOR,
     APP_CONCEPT,
+    APP_DISPLAY_NAME,
     APP_LOGIC,
     APP_NAME,
     APP_REPO,
@@ -43,7 +44,7 @@ class AboutWindow(QDialog):
         layout.setContentsMargins(24, 20, 24, 20)
 
         # App name
-        name_label = QLabel(APP_NAME)
+        name_label = QLabel(APP_DISPLAY_NAME)
         name_label.setStyleSheet('font-size: 16pt; font-weight: bold;')
         name_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(name_label)

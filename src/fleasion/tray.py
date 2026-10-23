@@ -35,6 +35,7 @@ from .gui import (
 )
 from .utils import (
     APP_DISCORD,
+    APP_DISPLAY_NAME,
     APP_NAME,
     APP_VERSION,
     LOGS_DIR,
@@ -290,13 +291,13 @@ class SystemTray:
         status = (
             tr('tray.status.running') if self.proxy_master.is_running else tr('tray.status.stopped')
         )
-        self.tray.setToolTip(tr('ui.tray.value_value', value0=APP_NAME, value1=status))
+        self.tray.setToolTip(tr('ui.tray.value_value', value0=APP_DISPLAY_NAME, value1=status))
 
     def _create_menu(self):
         """Create the tray menu."""
         # Title (disabled)
         title_action = QAction(
-            tr('ui.tray.value_v_value', value0=APP_NAME, value1=APP_VERSION), self.menu
+            tr('ui.tray.value_v_value', value0=APP_DISPLAY_NAME, value1=APP_VERSION), self.menu
         )
         title_action.setEnabled(False)
         self.menu.addAction(title_action)
@@ -965,7 +966,7 @@ class SystemTray:
             return
 
         self._dashboard_close_notice_shown = True
-        title = APP_NAME
+        title = APP_DISPLAY_NAME
         message = tr('tray.dashboard_closed_notice')
         icon_path = get_icon_path()
 
@@ -1049,7 +1050,7 @@ class SystemTray:
             key = winreg.CreateKey(
                 winreg.HKEY_CURRENT_USER, rf'SOFTWARE\Classes\AppUserModelId\{app_id}'
             )
-            winreg.SetValueEx(key, 'DisplayName', 0, winreg.REG_EXPAND_SZ, APP_NAME)
+            winreg.SetValueEx(key, 'DisplayName', 0, winreg.REG_EXPAND_SZ, APP_DISPLAY_NAME)
             winreg.SetValueEx(key, 'IconBackgroundColor', 0, winreg.REG_SZ, '00000000')
             if icon_path is not None:
                 winreg.SetValueEx(key, 'IconUri', 0, winreg.REG_SZ, str(icon_path))

@@ -255,7 +255,7 @@ DEFAULT_SETTINGS = {
     'enabled_configs': [],
     'last_config': 'Default',
     'theme': 'System',  # System, Light, Dark
-    'language': 'en',
+    'language': 'zh',
     'audio_volume': 70,  # 0-100
     'always_on_top': False,
     'open_dashboard_on_launch': True,
@@ -794,7 +794,7 @@ class ConfigManager:
         """Return a supported language code, falling back to English."""
         from ..localization import normalize_language
 
-        return normalize_language(self.settings.get('language', 'en'))
+        return normalize_language(self.settings.get('language', 'zh'))
 
     @language.setter
     def language(self, value: str):

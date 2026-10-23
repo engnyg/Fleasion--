@@ -40,6 +40,7 @@ from .proxy import ProxyMaster, check_and_patch_running_roblox_ca
 from .tray import SystemTray
 from .utils import (
     APP_DISCORD,
+    APP_DISPLAY_NAME,
     APP_NAME,
     CONFIG_DIR,
     LOG_FILE,
@@ -4041,7 +4042,7 @@ def _check_linux_gui_dependencies() -> bool:
     )
     QMessageBox.critical(
         None,
-        tr('app.value_system_package_required', value0=APP_NAME),
+        tr('app.value_system_package_required', value0=APP_DISPLAY_NAME),
         tr(
             'app.fleasion_needs_a_system_package_before_its',
             value0=package_list,
@@ -4195,7 +4196,7 @@ def main():
     app.setStyleSheet('QDialogButtonBox, QMessageBox { button-layout: 0; }')
     app.setQuitOnLastWindowClosed(False)
     app.setApplicationName(APP_NAME)
-    app.setApplicationDisplayName(APP_NAME)
+    app.setApplicationDisplayName(APP_DISPLAY_NAME)
     if icon_path := get_icon_path():
         from PyQt6.QtGui import QIcon
 
