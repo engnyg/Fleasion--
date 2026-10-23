@@ -22,6 +22,7 @@ from PyQt6.QtWidgets import (
     QWidget,
 )
 
+from ..gui import glass
 from ..gui.theme import ThemeManager
 from ..localization import available_languages, get_language, tr
 from ..utils import CONFIG_DIR, run_in_thread
@@ -532,6 +533,12 @@ class SettingsTab(QWidget):
         self._always_on_top_chk.toggled.connect(self._on_always_on_top_toggled)
         section.add_widget(self._always_on_top_chk)
 
+        if glass.is_supported():
+            self._glass_ui_chk = QCheckBox(tr('settings.glass.checkbox'))
+            self._glass_ui_chk.setChecked(self._config.glass_ui)
+            self._glass_ui_chk.toggled.connect(self._on_glass_ui_toggled)
+            section.add_widget(self._glass_ui_chk)
+
         return section
 
     def _build_scraper_section(self) -> CollapsibleSection:
@@ -658,6 +665,11 @@ class SettingsTab(QWidget):
             chk.setChecked(value)
             chk.blockSignals(False)
 
+        if glass.is_supported():
+            self._glass_ui_chk.blockSignals(True)
+            self._glass_ui_chk.setChecked(self._config.glass_ui)
+            self._glass_ui_chk.blockSignals(False)
+
         idx = self._upstream_mode_combo.findData(self._config.upstream_transport_mode)
         self._upstream_mode_combo.blockSignals(True)
         self._upstream_mode_combo.setCurrentIndex(max(0, idx))
@@ -734,6 +746,14 @@ class SettingsTab(QWidget):
                 tr('settings.language.restart_required_title'),
                 tr('settings.language.restart_required_body'),
             )
+
+    def _on_glass_ui_toggled(self, checked: bool):
+        self._config.glass_ui = checked
+        QMessageBox.information(
+            self,
+            tr('settings.language.restart_required_title'),
+            tr('settings.glass.restart_required_body'),
+        )
 
     def _on_theme_toggled(self, checked: bool, theme: str):
         if not checked:

@@ -738,6 +738,8 @@ KAZAKH: dict[str, str] = {
     'settings.language.label': 'Тіл',
     'settings.language.restart_required_body': 'Жаңа тілді қолдану үшін Fleasion-ды қайта іске қосыңыз. Ағымдағы сеанс бұрынғы тілде қалады.',
     'settings.language.restart_required_title': 'Қайта іске қосу қажет',
+    'settings.glass.checkbox': 'Терезелердің «сұйық әйнек» әсері (Windows 11)',
+    'settings.glass.restart_required_body': 'Әйнек әсерінің өзгерісін қолдану үшін Fleasion қолданбасын қайта іске қосыңыз.',
     'settings.language.section': 'Тіл',
     'settings.linux_client.none_detected': 'ештеңе анықталмады',
     'settings.linux_client.section': 'Linux Roblox клиенті',

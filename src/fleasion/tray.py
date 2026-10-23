@@ -259,6 +259,7 @@ class SystemTray:
         self.tray.setContextMenu(self.menu)
 
         # Apply initial theme
+        ThemeManager.set_glass_enabled(self.config_manager.glass_ui)
         ThemeManager.apply_theme(self.config_manager.theme)
 
         # Connect tray activation signal

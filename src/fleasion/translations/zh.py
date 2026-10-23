@@ -738,6 +738,8 @@ CHINESE: dict[str, str] = {
     'settings.language.label': '语言',
     'settings.language.restart_required_body': '请重启 跳蛋 以应用新语言。当前会话会继续使用现有语言。',
     'settings.language.restart_required_title': '需要重启',
+    'settings.glass.checkbox': '液态玻璃窗口效果（Windows 11）',
+    'settings.glass.restart_required_body': '请重启 跳蛋 以应用液态玻璃窗口效果的更改。',
     'settings.language.section': '语言',
     'settings.linux_client.none_detected': '未检测到',
     'settings.linux_client.section': 'Linux Roblox 客户端',

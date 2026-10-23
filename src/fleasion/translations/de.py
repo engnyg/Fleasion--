@@ -738,6 +738,8 @@ GERMAN: dict[str, str] = {
     'settings.language.label': 'Sprache',
     'settings.language.restart_required_body': 'Starten Sie Fleasion neu, um die neue Sprache anzuwenden. Die aktuelle Sitzung bleibt in der bisherigen Sprache.',
     'settings.language.restart_required_title': 'Neustart erforderlich',
+    'settings.glass.checkbox': 'Flüssigglas-Fenstereffekt (Windows 11)',
+    'settings.glass.restart_required_body': 'Starte Fleasion neu, um die Änderung des Glaseffekts zu übernehmen.',
     'settings.language.section': 'Sprache',
     'settings.linux_client.none_detected': 'keiner erkannt',
     'settings.linux_client.section': 'Linux-Roblox-Client',
